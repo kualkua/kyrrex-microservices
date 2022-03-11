@@ -1,0 +1,31 @@
+{
+  "name": "@kyrrex/microservices",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prebuild": "rimraf dist"
+  },
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.wldev.app:affiliate/packages/microservices.gi"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nestjs/microservices": "^8.2.4",
+    "@types/node": "^17.0.21",
+    "dotenv": "^10.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "@nestjs/microservices": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/microservices": {
+      "optional": true
+    }
+  }
+}
