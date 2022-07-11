@@ -12,7 +12,7 @@ class ConfigService {
     return (() => ({
       USERS: 'USERS_SVC',
       LOCATIONS: 'LOCATIONS_SVC',
-      AFFILIATE: 'AFFILIATE_SVC',
+      LINKS: 'LINKS_SVC',
     }))();
   }
 
@@ -20,7 +20,7 @@ class ConfigService {
     return (() => ({
       users: process.env.PAYMENTS_QUEUE || 'users',
       locations: process.env.ROOMSMONEY_QUEUE || 'locations',
-      affiliate: process.env.AFFILIATE_QUEUE || 'affiliate',
+      links: process.env.LINKS_QUEUE || 'links',
     }))();
   }
 
