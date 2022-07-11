@@ -31,14 +31,14 @@ export const LOCATIONS_SVC = {
       }),
   };
 
-export const AFFILIATE_SVC = {
-  provide: configService.getSvc().AFFILIATE,
+export const LINKS_SVC = {
+  provide: configService.getSvc().LINKS,
   useFactory: () =>
     ClientProxyFactory.create({
       transport: Transport.RMQ,
       options: {
         urls: [configService.getBrokerUri()],
-        queue: configService.getQueue().affiliate,
+        queue: configService.getQueue().links,
         queueOptions: {
           durable: false,
         },
