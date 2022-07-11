@@ -31,4 +31,19 @@ export const LOCATIONS_SVC = {
       }),
   };
 
+export const AFFILIATE_SVC = {
+  provide: configService.getSvc().AFFILIATE,
+  useFactory: () =>
+    ClientProxyFactory.create({
+      transport: Transport.RMQ,
+      options: {
+        urls: [configService.getBrokerUri()],
+        queue: configService.getQueue().affiliate,
+        queueOptions: {
+          durable: false,
+        },
+      },
+    }),
+  };
+
 export const services = configService.getSvc();

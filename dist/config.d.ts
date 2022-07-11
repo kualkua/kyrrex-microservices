@@ -5,10 +5,12 @@ declare class ConfigService {
     getSvc(): {
         USERS: string;
         LOCATIONS: string;
+        AFFILIATE: string;
     };
     getQueue(): {
         users: string;
         locations: string;
+        affiliate: string;
     };
     getEnv(): string;
 }
