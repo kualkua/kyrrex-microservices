@@ -50,7 +50,7 @@ exports.RATES_SVC = {
             urls: [config_1.configService.getCommonBrokerUri()],
             queue: config_1.configService.getQueue().rates,
             queueOptions: {
-                durable: false,
+                durable: true,
             },
         },
     }),
