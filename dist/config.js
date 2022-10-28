@@ -10,11 +10,15 @@ class ConfigService {
     getBrokerUri() {
         return process.env.BROKER_URI || 'amqp://rabbitmq:rabbitmq@localhost:5672';
     }
+    getCommonBrokerUri() {
+        return process.env.COMMON_BROKER_URI || 'amqp://rabbitmq:rabbitmq@localhost:5672';
+    }
     getSvc() {
         return (() => ({
             USERS: 'USERS_SVC',
             LOCATIONS: 'LOCATIONS_SVC',
             LINKS: 'LINKS_SVC',
+            RATES: 'RATES_SVC'
         }))();
     }
     getQueue() {
@@ -22,6 +26,7 @@ class ConfigService {
             users: process.env.PAYMENTS_QUEUE || 'users',
             locations: process.env.ROOMSMONEY_QUEUE || 'locations',
             links: process.env.LINKS_QUEUE || 'links',
+            rates: process.env.RATES_QUEUE || 'rates',
         }))();
     }
     getEnv() {

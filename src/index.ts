@@ -46,4 +46,19 @@ export const LINKS_SVC = {
     }),
   };
 
+export const RATES_SVC = {
+  provide: configService.getSvc().RATES,
+  useFactory: () =>
+    ClientProxyFactory.create({
+      transport: Transport.RMQ,
+      options: {
+        urls: [configService.getCommonBrokerUri()],
+        queue: configService.getQueue().rates,
+        queueOptions: {
+          durable: false,
+        },
+      },
+    }),
+  };
+
 export const services = configService.getSvc();
