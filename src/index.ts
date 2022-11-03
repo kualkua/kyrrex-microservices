@@ -10,7 +10,7 @@ export const USERS_SVC = {
           urls: [configService.getBrokerUri()],
           queue: configService.getQueue().users,
           queueOptions: {
-            durable: false,
+            durable: true,
           },
         },
       }),
@@ -25,7 +25,7 @@ export const LOCATIONS_SVC = {
           urls: [configService.getBrokerUri()],
           queue: configService.getQueue().locations,
           queueOptions: {
-            durable: false,
+            durable: true,
           },
         },
       }),

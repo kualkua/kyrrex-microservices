@@ -11,7 +11,7 @@ exports.USERS_SVC = {
             urls: [config_1.configService.getBrokerUri()],
             queue: config_1.configService.getQueue().users,
             queueOptions: {
-                durable: false,
+                durable: true,
             },
         },
     }),
@@ -24,7 +24,7 @@ exports.LOCATIONS_SVC = {
             urls: [config_1.configService.getBrokerUri()],
             queue: config_1.configService.getQueue().locations,
             queueOptions: {
-                durable: false,
+                durable: true,
             },
         },
     }),
