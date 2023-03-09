@@ -8,12 +8,14 @@ declare class ConfigService {
         LOCATIONS: string;
         LINKS: string;
         RATES: string;
+        MAILER: string;
     };
     getQueue(): {
         users: string;
         locations: string;
         links: string;
         rates: string;
+        mailer: string;
     };
     getEnv(): string;
 }

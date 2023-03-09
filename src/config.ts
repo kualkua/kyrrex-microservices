@@ -17,7 +17,8 @@ class ConfigService {
       USERS: 'USERS_SVC',
       LOCATIONS: 'LOCATIONS_SVC',
       LINKS: 'LINKS_SVC',
-      RATES: 'RATES_SVC'
+      RATES: 'RATES_SVC',
+      MAILER: 'MAILER_SVC'
     }))();
   }
 
@@ -27,6 +28,7 @@ class ConfigService {
       locations: process.env.ROOMSMONEY_QUEUE || 'locations',
       links: process.env.LINKS_QUEUE || 'links',
       rates: process.env.RATES_QUEUE || 'rates',
+      mailer: process.env.MAILER_QUEUE || 'mailer',
     }))();
   }
 
