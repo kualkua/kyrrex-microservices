@@ -61,4 +61,19 @@ export const RATES_SVC = {
     }),
   };
 
+export const MAILER_SVC = {
+    provide: configService.getSvc().MAILER,
+    useFactory: () =>
+        ClientProxyFactory.create({
+            transport: Transport.RMQ,
+            options: {
+                urls: [configService.getBrokerUri()],
+                queue: configService.getQueue().mailer,
+                queueOptions: {
+                    durable: true,
+                },
+            },
+        }),
+};
+
 export const services = configService.getSvc();

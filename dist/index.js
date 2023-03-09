@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.services = exports.RATES_SVC = exports.LINKS_SVC = exports.LOCATIONS_SVC = exports.USERS_SVC = void 0;
+exports.services = exports.MAILER_SVC = exports.RATES_SVC = exports.LINKS_SVC = exports.LOCATIONS_SVC = exports.USERS_SVC = void 0;
 const microservices_1 = require("@nestjs/microservices");
 const config_1 = require("./config");
 exports.USERS_SVC = {
@@ -49,6 +49,19 @@ exports.RATES_SVC = {
         options: {
             urls: [config_1.configService.getCommonBrokerUri()],
             queue: config_1.configService.getQueue().rates,
+            queueOptions: {
+                durable: true,
+            },
+        },
+    }),
+};
+exports.MAILER_SVC = {
+    provide: config_1.configService.getSvc().MAILER,
+    useFactory: () => microservices_1.ClientProxyFactory.create({
+        transport: microservices_1.Transport.RMQ,
+        options: {
+            urls: [config_1.configService.getBrokerUri()],
+            queue: config_1.configService.getQueue().mailer,
             queueOptions: {
                 durable: true,
             },
