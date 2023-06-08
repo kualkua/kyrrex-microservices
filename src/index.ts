@@ -75,5 +75,21 @@ export const MAILER_SVC = {
             },
         }),
 };
+export const GATEWAY_SVC = {
+    provide: configService.getSvc().GATEWAY,
+    useFactory: () =>
+        ClientProxyFactory.create({
+            transport: Transport.RMQ,
+            options: {
+                urls: [configService.getBrokerUri()],
+                queue: configService.getQueue().gateway,
+                queueOptions: {
+                    durable: true,
+                },
+            },
+        }),
+};
+
+
 
 export const services = configService.getSvc();
