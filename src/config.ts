@@ -18,7 +18,8 @@ class ConfigService {
       LOCATIONS: 'LOCATIONS_SVC',
       LINKS: 'LINKS_SVC',
       RATES: 'RATES_SVC',
-      MAILER: 'MAILER_SVC'
+      MAILER: 'MAILER_SVC',
+      AFFILIATE_GATEWAY: 'AFFILIATE_GATEWAY_SVC'
     }))();
   }
 
@@ -29,6 +30,7 @@ class ConfigService {
       links: process.env.LINKS_QUEUE || 'links',
       rates: process.env.RATES_QUEUE || 'rates',
       mailer: process.env.MAILER_QUEUE || 'mailer',
+      affiliate_gateway: process.env.AFFILIATE_GATEWAY_QUEUE || 'affiliate_gateway',
     }))();
   }
 

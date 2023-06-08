@@ -75,5 +75,21 @@ export const MAILER_SVC = {
             },
         }),
 };
+export const AFFILIATE_GATEWAY_SVC = {
+    provide: configService.getSvc().AFFILIATE_GATEWAY,
+    useFactory: () =>
+        ClientProxyFactory.create({
+            transport: Transport.RMQ,
+            options: {
+                urls: [configService.getBrokerUri()],
+                queue: configService.getQueue().affiliate_gateway,
+                queueOptions: {
+                    durable: true,
+                },
+            },
+        }),
+};
+
+
 
 export const services = configService.getSvc();
