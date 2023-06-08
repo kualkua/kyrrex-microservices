@@ -20,7 +20,7 @@ class ConfigService {
             LINKS: 'LINKS_SVC',
             RATES: 'RATES_SVC',
             MAILER: 'MAILER_SVC',
-            GATEWAY: 'GATEWAY_SVC'
+            AFFILIATE_GATEWAY: 'AFFILIATE_GATEWAY_SVC'
         }))();
     }
     getQueue() {
@@ -30,7 +30,7 @@ class ConfigService {
             links: process.env.LINKS_QUEUE || 'links',
             rates: process.env.RATES_QUEUE || 'rates',
             mailer: process.env.MAILER_QUEUE || 'mailer',
-            gateway: process.env.GATEWAY_QUEUE || 'gateway',
+            affiliate_gateway: process.env.AFFILIATE_GATEWAY_QUEUE || 'affiliate_gateway',
         }))();
     }
     getEnv() {

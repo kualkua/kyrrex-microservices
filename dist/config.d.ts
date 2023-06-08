@@ -9,7 +9,7 @@ declare class ConfigService {
         LINKS: string;
         RATES: string;
         MAILER: string;
-        GATEWAY: string;
+        AFFILIATE_GATEWAY: string;
     };
     getQueue(): {
         users: string;
@@ -17,7 +17,7 @@ declare class ConfigService {
         links: string;
         rates: string;
         mailer: string;
-        gateway: string;
+        affiliate_gateway: string;
     };
     getEnv(): string;
 }
